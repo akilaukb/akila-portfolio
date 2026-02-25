@@ -124,29 +124,31 @@ export default function ScrollyCanvas() {
 
 
     if (isMobile) {
-        // Mobile Fallback: Static Hero Image
+        // Mobile Fallback: Simplified Static Hero without redundant text overlap
         return (
             <div className="h-screen w-full relative flex items-center justify-center bg-black overflow-hidden">
-                {/* Replace with actual first frame or a dedicated mobile hero */}
                 <div className="absolute inset-0">
                     <Image
-                        src="/sequence/frame_000.webp" // Fallback to first frame
+                        src="/sequence/frame_000.webp"
                         alt="Hero"
                         fill
                         className="object-cover opacity-60"
                         priority
                     />
                 </div>
-                <div className="relative z-10 text-center px-4">
-                    <h1 className="text-4xl font-bold tracking-tighter text-white mb-2">Akila Umayanga</h1>
-                    <p className="text-gray-400">Systems Engineer</p>
+                {/* HUD style scroll indicator for mobile */}
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 flex flex-col items-center gap-2">
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll to Explore</span>
+                    <div className="w-[1px] h-8 bg-gradient-to-b from-white/0 via-white/50 to-white/0" />
                 </div>
             </div>
         )
     }
 
+    const heroScrollHeight = isMobile ? "h-[350vh]" : "h-[700vh]";
+
     return (
-        <div ref={containerRef} className="relative h-[700vh] w-full bg-black">
+        <div ref={containerRef} className={`relative ${heroScrollHeight} w-full bg-black`}>
             <div className="sticky top-0 h-screen w-full overflow-hidden z-0">
                 <canvas ref={canvasRef} className="block h-full w-full object-cover" />
             </div>
