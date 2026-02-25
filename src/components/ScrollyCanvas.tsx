@@ -31,7 +31,6 @@ export default function ScrollyCanvas() {
             for (let i = 0; i < FRAME_COUNT; i++) {
                 const promise = new Promise<void>((resolve) => {
                     const img = new window.Image();
-                    // Using standardized names from rename script: frame_000.webp
                     const formattedIndex = i.toString().padStart(3, "0");
                     img.src = `${IMAGE_PATH_PREFIX}${formattedIndex}.webp`;
                     img.onload = () => {
@@ -41,7 +40,7 @@ export default function ScrollyCanvas() {
                     img.onerror = () => {
                         console.error(`Failed to load image: ${img.src}`);
                         resolve();
-                    }
+                    };
                 });
                 promises.push(promise);
             }
@@ -51,7 +50,7 @@ export default function ScrollyCanvas() {
             setImagesLoaded(true);
         };
 
-        if (isMobile === false) { // Only load if confirmed not mobile
+        if (isMobile === false) {
             loadImages();
         }
     }, [isMobile]);
@@ -106,7 +105,7 @@ export default function ScrollyCanvas() {
 
     useMotionValueEvent(currentIndex, "change", (latest) => {
         if (imagesLoaded && !isMobile) {
-            requestAnimationFrame(() => renderFrame(Math.round(latest)));
+            renderFrame(Math.round(latest));
         }
     });
 
@@ -148,7 +147,7 @@ export default function ScrollyCanvas() {
 
     return (
         <div ref={containerRef} className="relative h-[700vh] w-full bg-black">
-            <div className="sticky top-0 h-screen w-full overflow-hidden">
+            <div className="sticky top-0 h-screen w-full overflow-hidden z-0">
                 <canvas ref={canvasRef} className="block h-full w-full object-cover" />
             </div>
         </div>
