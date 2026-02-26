@@ -79,34 +79,62 @@ export default function Navbar() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: "100%" }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="fixed inset-0 bg-black z-[65] flex flex-col items-center justify-center gap-8 md:hidden pointer-events-auto"
+                        className="fixed inset-0 bg-black/95 backdrop-blur-2xl z-[65] flex flex-col md:hidden pointer-events-auto overflow-hidden"
                     >
-                        {[
-                            { name: "Home", href: "/" },
-                            { name: "About", href: "/about" },
-                            { name: "Projects", href: "/projects" },
-                            { name: "Tools", href: "/tools" },
-                            { name: "Resume", href: "/resume" }
-                        ].map((item, i) => (
-                            <motion.div
-                                key={item.name}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                            >
-                                <Link
-                                    href={item.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-4xl font-playfair font-black text-white hover:text-blue-500 transition-colors"
+                        {/* Background Decorative Elements */}
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
+                        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-indigo-500/10 rounded-full blur-[100px] -z-10 -translate-x-1/2 translate-y-1/2" />
+                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none -z-10" />
+
+                        {/* Menu Header */}
+                        <div className="flex justify-between items-center px-6 py-6 border-b border-white/10">
+                            <span className="text-xl font-playfair font-black tracking-tighter text-white/40 italic">NAVIGATION</span>
+                            <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-white/10 to-transparent" />
+                        </div>
+
+                        {/* Menu Links */}
+                        <div className="flex-grow flex flex-col justify-center px-10 gap-6">
+                            {[
+                                { name: "Home", href: "/", icon: "01" },
+                                { name: "About", href: "/about", icon: "02" },
+                                { name: "Projects", href: "/projects", icon: "03" },
+                                { name: "Tools", href: "/tools", icon: "04" },
+                                { name: "Resume", href: "/resume", icon: "05" }
+                            ].map((item, i) => (
+                                <motion.div
+                                    key={item.name}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.1 + i * 0.1 }}
+                                    className="group"
                                 >
-                                    {item.name}
-                                </Link>
-                            </motion.div>
-                        ))}
-                        <div className="flex items-center gap-6 mt-12">
-                            <a href="https://linkedin.com/in/akila-ukb" target="_blank" className="text-white hover:text-blue-500 transition-colors"><Linkedin size={28} /></a>
-                            <a href="https://github.com/akila-ukb" target="_blank" className="text-white hover:text-blue-500 transition-colors"><Github size={28} /></a>
-                            <a href="mailto:akilaukb@gmail.com" className="text-white hover:text-blue-500 transition-colors"><Mail size={28} /></a>
+                                    <Link
+                                        href={item.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="flex items-end gap-4"
+                                    >
+                                        <span className="text-blue-500/50 font-mono text-sm mb-2 group-hover:text-blue-400 transition-colors">{item.icon}</span>
+                                        <span className="text-5xl font-playfair font-black text-white group-hover:tracking-wider transition-all duration-500">
+                                            {item.name.toUpperCase()}
+                                        </span>
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Menu Footer */}
+                        <div className="p-8 border-t border-white/5 bg-white/5 backdrop-blur-md">
+                            <div className="flex flex-col gap-6">
+                                <div className="space-y-1">
+                                    <p className="text-[10px] text-white/30 uppercase tracking-[0.3em] font-bold">Get in touch</p>
+                                    <p className="text-white/80 font-manrope">akilaukb@gmail.com</p>
+                                </div>
+                                <div className="flex items-center gap-6">
+                                    <a href="https://linkedin.com/in/akila-ukb" target="_blank" className="p-3 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 transition-all text-white"><Linkedin size={24} /></a>
+                                    <a href="https://github.com/akila-ukb" target="_blank" className="p-3 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 transition-all text-white"><Github size={24} /></a>
+                                    <a href="mailto:akilaukb@gmail.com" className="p-3 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 transition-all text-white"><Mail size={24} /></a>
+                                </div>
+                            </div>
                         </div>
                     </motion.div>
                 )}
