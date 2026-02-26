@@ -28,7 +28,7 @@ export default function Navbar() {
                 }}
                 animate={hidden ? "hidden" : "visible"}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className={`fixed top-0 left-0 right-0 z-[60] flex justify-between items-center px-6 py-6 md:px-12 text-white pointer-events-none ${!isOpen ? "mix-blend-difference" : ""}`}
+                className={`fixed top-0 left-0 right-0 z-[100] flex justify-between items-center px-6 py-6 md:px-12 text-white pointer-events-none ${!isOpen ? "mix-blend-difference" : ""}`}
             >
                 {/* Logo */}
                 <div className="pointer-events-auto">
@@ -66,7 +66,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button - Only visible on mobile */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className={`md:hidden p-2 hover:bg-white/10 rounded-full transition-colors relative z-[100] ${!isOpen ? "" : "text-white"}`}
+                        className={`md:hidden p-2 hover:bg-white/10 rounded-full transition-colors relative z-[110] ${!isOpen ? "" : "text-white"}`}
                     >
                         {isOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>

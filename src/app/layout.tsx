@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Manrope } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -30,7 +31,10 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <div className="noise-overlay" />
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          {children}
+          <ScrollToTop />
+        </SmoothScroll>
       </body>
     </html>
   );
