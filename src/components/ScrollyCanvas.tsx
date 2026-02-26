@@ -139,11 +139,6 @@ export default function ScrollyCanvas() {
                                 priority
                             />
                         </div>
-                        {/* HUD style scroll indicator for mobile */}
-                        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 flex flex-col items-center gap-2">
-                            <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll to Explore</span>
-                            <div className="w-[1px] h-8 bg-gradient-to-b from-white/0 via-white/50 to-white/0" />
-                        </div>
                     </div>
                 ) : (
                     <canvas ref={canvasRef} className="block h-full w-full object-cover" />

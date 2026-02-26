@@ -14,13 +14,13 @@ export default function Overlay() {
     const [stage, setStage] = useState(1);
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        if (latest < 0.20) {
+        if (latest <= 0.18) {
             setStage(1);
-        } else if (latest >= 0.20 && latest < 0.40) {
+        } else if (latest > 0.18 && latest < 0.38) {
             setStage(2);
-        } else if (latest >= 0.40 && latest < 0.60) {
+        } else if (latest >= 0.38 && latest < 0.58) {
             setStage(3);
-        } else if (latest >= 0.60 && latest < 0.80) {
+        } else if (latest >= 0.58 && latest < 0.78) {
             setStage(4);
         } else {
             setStage(5);
@@ -236,10 +236,10 @@ export default function Overlay() {
                             <motion.div
                                 key="s5"
                                 {...transitions}
-                                className="absolute inset-0 flex flex-col justify-center items-center pb-20 w-full h-full max-w-[1920px] mx-auto px-4"
+                                className="absolute inset-0 flex flex-col justify-center items-center pb-20 pt-20 md:pt-0 w-full h-full max-w-[1920px] mx-auto px-4"
                             >
                                 {/* Clean Stacked Brand Message */}
-                                <div className="text-center relative w-full flex flex-col items-center justify-center gap-1 md:gap-2 select-none">
+                                <div className="text-center relative w-full flex flex-col items-center justify-center gap-1 md:gap-2 select-none mt-16 md:mt-0">
                                     <h2 className="text-[10vw] md:text-[7vw] leading-none font-playfair font-black text-white tracking-tight uppercase">
                                         DESIGN
                                     </h2>
