@@ -28,7 +28,7 @@ export default function Navbar() {
                 }}
                 animate={hidden ? "hidden" : "visible"}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="fixed top-0 left-0 right-0 z-[60] flex justify-between items-center px-6 py-6 md:px-12 mix-blend-difference text-white pointer-events-none"
+                className={`fixed top-0 left-0 right-0 z-[60] flex justify-between items-center px-6 py-6 md:px-12 text-white pointer-events-none ${!isOpen ? "mix-blend-difference" : ""}`}
             >
                 {/* Logo */}
                 <div className="pointer-events-auto">
@@ -66,9 +66,9 @@ export default function Navbar() {
                     {/* Mobile Menu Button - Only visible on mobile */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden p-2 hover:bg-white/10 rounded-full transition-colors relative z-[70] mix-blend-difference"
+                        className={`md:hidden p-2 hover:bg-white/10 rounded-full transition-colors relative z-[100] ${!isOpen ? "" : "text-white"}`}
                     >
-                        {isOpen ? <X size={24} /> : <Menu size={24} />}
+                        {isOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
                 </div>
             </motion.nav>
@@ -77,67 +77,79 @@ export default function Navbar() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, x: "100%" }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: "100%" }}
-                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="fixed inset-0 bg-[#0a0a0a] z-[65] flex flex-col md:hidden pointer-events-auto overflow-hidden"
+                        initial={{ opacity: 0, y: "-100%" }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: "-100%" }}
+                        transition={{ type: "tween", duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        className="fixed inset-0 bg-[#050505] z-[90] flex flex-col md:hidden pointer-events-auto overflow-hidden"
                     >
-                        {/* Background Decorative Elements */}
-                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
-                        <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-indigo-500/10 rounded-full blur-[100px] -z-10 -translate-x-1/2 translate-y-1/2" />
-                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none -z-10" />
+                        {/* Subtle Background Textures */}
+                        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px] -z-10 translate-x-1/4 -translate-y-1/4" />
+                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.02] pointer-events-none -z-10" />
 
-                        {/* Menu Header */}
-                        <div className="flex justify-between items-center px-6 py-7 border-b border-white/10">
-                            <span className="text-xl font-playfair font-black tracking-tighter text-white/40 italic">NAVIGATION</span>
-                            <div className="h-[1px] flex-grow mx-4 bg-gradient-to-r from-white/10 to-transparent" />
-                        </div>
+                        {/* Menu Header Area */}
+                        <div className="px-6 pt-20 pb-10">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.2 }}
+                                className="flex items-center gap-3 text-blue-500 font-mono text-[10px] tracking-[0.5em] uppercase font-bold mb-8"
+                            >
+                                <div className="w-8 h-px bg-blue-500" />
+                                Index
+                            </motion.div>
 
-                        {/* Menu Links */}
-                        <div className="flex-grow flex flex-col justify-center px-10 gap-8">
-                            {[
-                                { name: "Home", href: "/", icon: "01" },
-                                { name: "About", href: "/about", icon: "02" },
-                                { name: "Projects", href: "/projects", icon: "03" },
-                                { name: "Tools", href: "/tools", icon: "04" },
-                                { name: "Resume", href: "/resume", icon: "05" }
-                            ].map((item, i) => (
-                                <motion.div
-                                    key={item.name}
-                                    initial={{ opacity: 0, x: 50 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.1 + i * 0.1 }}
-                                    className="group"
-                                >
-                                    <Link
-                                        href={item.href}
-                                        onClick={() => setIsOpen(false)}
-                                        className="flex items-end gap-4"
+                            {/* Menu Links */}
+                            <div className="flex flex-col gap-6">
+                                {[
+                                    { name: "Home", href: "/", icon: "01" },
+                                    { name: "About", href: "/about", icon: "02" },
+                                    { name: "Projects", href: "/projects", icon: "03" },
+                                    { name: "Tools", href: "/tools", icon: "04" },
+                                    { name: "Resume", href: "/resume", icon: "05" }
+                                ].map((item, i) => (
+                                    <motion.div
+                                        key={item.name}
+                                        initial={{ opacity: 0, x: -30 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: 0.3 + i * 0.1 }}
+                                        className="group"
                                     >
-                                        <span className="text-blue-500 font-mono text-sm mb-2 group-hover:translate-x-1 transition-transform">{item.icon}</span>
-                                        <span className="text-5xl md:text-6xl font-playfair font-black text-white group-hover:text-blue-400 transition-colors duration-300 uppercase">
-                                            {item.name}
-                                        </span>
-                                    </Link>
-                                </motion.div>
-                            ))}
+                                        <Link
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className="flex items-center gap-6"
+                                        >
+                                            <span className="text-white/20 font-playfair italic text-2xl group-hover:text-blue-500 transition-colors duration-300">{item.icon}</span>
+                                            <span className="text-5xl font-playfair font-black text-white hover:italic hover:translate-x-4 transition-all duration-500 uppercase tracking-tighter">
+                                                {item.name}
+                                            </span>
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
 
                         {/* Menu Footer */}
-                        <div className="p-10 border-t border-white/5 bg-white/[0.02] backdrop-blur-3xl mt-auto">
-                            <div className="flex flex-col gap-8">
-                                <div className="space-y-2">
-                                    <p className="text-[10px] text-white/30 uppercase tracking-[0.5em] font-bold">Contact Details</p>
-                                    <p className="text-white/90 font-manrope text-lg">akilaukb@gmail.com</p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.8 }}
+                            className="mt-auto p-8 border-t border-white/5 bg-[#080808]"
+                        >
+                            <div className="space-y-6">
+                                <div className="flex flex-col gap-1">
+                                    <span className="text-white/30 text-[9px] uppercase tracking-[0.4em] font-black">Connection</span>
+                                    <a href="mailto:akilaukb@gmail.com" className="text-white/80 font-manrope text-sm hover:text-white transition-colors">akilaukb@gmail.com</a>
                                 </div>
-                                <div className="flex items-center gap-6">
-                                    <a href="https://linkedin.com/in/akila-ukb" target="_blank" className="p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all text-white hover:-translate-y-1"><Linkedin size={24} /></a>
-                                    <a href="https://github.com/akila-ukb" target="_blank" className="p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all text-white hover:-translate-y-1"><Github size={24} /></a>
-                                    <a href="mailto:akilaukb@gmail.com" className="p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all text-white hover:-translate-y-1"><Mail size={24} /></a>
+                                <div className="flex gap-4">
+                                    <a href="https://linkedin.com/in/akila-ukb" target="_blank" className="p-4 bg-white/[0.03] border border-white/5 rounded-full text-white/50 hover:text-white hover:border-white/20 hover:bg-white/5 transition-all"><Linkedin size={20} /></a>
+                                    <a href="https://github.com/akila-ukb" target="_blank" className="p-4 bg-white/[0.03] border border-white/5 rounded-full text-white/50 hover:text-white hover:border-white/20 hover:bg-white/5 transition-all"><Github size={20} /></a>
+                                    <a href="mailto:akilaukb@gmail.com" className="p-4 bg-white/[0.03] border border-white/5 rounded-full text-white/50 hover:text-white hover:border-white/20 hover:bg-white/5 transition-all"><Mail size={20} /></a>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
