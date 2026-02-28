@@ -22,13 +22,30 @@ Redesigned from a static grid to a horizontal carousel with horizontal scroll sn
 ## 💾 Implementation History & Decisions
 
 ### Project Data Architecture
-- **Professional Projects**: Focused on Security Infrastructure. Images are hosted on GitHub/Credential providers to ensure zero-latency loading and reliable SSL delivery.
+- **Professional Projects**: Focused on Security Infrastructure. Images are hosted on Cloudinary/GitHub to ensure high visual quality and high-speed delivery.
+- **pfSense Project**: Updated to use an optimized Cloudinary URL (`f_auto, q_auto`) for the network diagram, improving LCP and visual clarity.
 - **Freelance Section**: Indigo/Cyan gradient background used to visually separate "Service Work" from "Experience Work."
+
+### Recent Updates (Session 2026-02-28)
+- **Mobile Experience & Layout**: 
+    - **Home**: Switched stat cards to a stacked grid on small screens to prevent overlap.
+    - **About**: Scaled down large headings to ensure readability on mobile devices.
+    - **Overlay**: Fine-tuned font sizes and spacing across all 5 intro stages for a better mobile experience.
+    - **Projects**: Fixed the "PROJECTS" heading split and ensured consistent padding.
+- **Branding & SEO**:
+    - Simplified metadata title to exactly **"Akila Umayanga"**.
+    - Generated and installed a custom circular **"AU" favicon** (`/public/icon.png`) for a more professional tab identity.
+- **Resume Performance**:
+    - Restored the **Live Resume Preview** using a robust Google Drive iframe.
+    - Added an enhanced **Fallback Interface** that provides high-resolution download and view options if the embed is blocked by browser security.
+- **Git Management**: 
+    - All refinements were pushed to the `main` branch to maintain a clean deployment state.
 
 ### Maintenance Hooks
 - **Git Config**: Local identity is hard-locked to `akilaukb` and `akiladevop@gmail.com` to prevent multi-account identity collision on the local system.
 - **Dev Port**: Standardized on port `3002` to avoid conflicts with default system services.
 
 ## 📈 Quality Assurance Standards
-- **LCP Optimization**: Image display switched to `object-contain` with padding for badges to ensure no clipping or over-zooming.
+- **LCP Optimization**: Image delivery migrated toward Cloudinary with automatic quality/format detection (`f_auto, q_auto`).
+- **Mobile-First Validation**: Verified all layouts on simulated iPhone SE/Pixel small-screen breakpoints.
 - **Scroll Performance**: `use-mobile` hook implemented to selectively disable heavy WebGL/Three.js fragments on low-end mobile devices if needed.
