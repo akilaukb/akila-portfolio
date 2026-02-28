@@ -56,7 +56,7 @@ export default function HomeContent() {
             <div className="max-w-7xl mx-auto mb-32">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
                     <div className="space-y-8">
-                        <h2 className="text-6xl md:text-8xl font-manrope font-black tracking-tighter leading-tight">
+                        <h2 className="text-4xl md:text-8xl font-manrope font-black tracking-tighter leading-tight">
                             BUILD<span className="text-gray-300">.</span><br />
                             SECURE<span className="text-blue-500">.</span><br />
                             SCALE<span className="text-gray-300">.</span>
@@ -93,11 +93,11 @@ export default function HomeContent() {
                             With 4+ years of experience managing enterprise infrastructure and cloud environments. Proven expertise in L1/L2 Incident Management achieving 90% FCR, solving complex system issues while meeting strict SLAs. Proven track record managing 500+ monthly tickets, executing patch management, and ensuring high system availability while maintaining ISO 27001 compliance.
                         </p>
 
-                        <div className="grid grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
                             {stats.map((stat, index) => (
-                                <div key={index} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                                    <h3 className="text-3xl md:text-4xl font-bold font-manrope text-blue-600 mb-1">{stat.value}</h3>
-                                    <p className="text-[10px] md:text-xs text-gray-500 font-manrope uppercase tracking-wider font-bold">{stat.label}</p>
+                                <div key={index} className="bg-white p-6 sm:p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center sm:items-start text-center sm:text-left">
+                                    <h3 className="text-4xl sm:text-3xl md:text-4xl font-bold font-manrope text-blue-600 mb-1">{stat.value}</h3>
+                                    <p className="text-xs text-gray-500 font-manrope uppercase tracking-wider font-bold">{stat.label}</p>
                                 </div>
                             ))}
                         </div>

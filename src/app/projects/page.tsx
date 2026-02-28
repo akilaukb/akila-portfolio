@@ -37,7 +37,7 @@ const professionalProjects = [
         tags: ["pfSense", "OpenVPN", "IPsec IKEv2", "VPC Routing", "Network Security"],
         links: [],
         icon: <Network size={40} className="text-blue-400 group-hover:text-blue-300 transition-colors" />,
-        image: "https://media.licdn.com/dms/image/v2/D562DAQHGUBjC9vxyyQ/profile-treasury-image-shrink_160_160/B56Zu2lhZmIwAo-/0/1768294849300?e=1772038800&v=beta&t=tNFTAX0Ucd-tBRQp3ZTogS4tBtvgP-cF0QZpJ3W3HcU"
+        image: "https://res.cloudinary.com/dmh9uksac/image/upload/f_auto,q_auto/v1772207557/Untitled_Diagram.drawio_1_q8puqs.png"
     }
 ];
 
@@ -87,7 +87,7 @@ export default function Projects() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="text-6xl md:text-8xl font-black font-manrope mb-8 tracking-tighter">
+                    <h1 className="text-5xl md:text-8xl font-black font-manrope mb-8 tracking-tighter leading-none">
                         PRO<span className="text-blue-600">JECTS</span>
                     </h1>
 

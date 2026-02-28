@@ -58,8 +58,8 @@ export default function Tools() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className="flex flex-col items-center text-center mb-20">
-                        <h1 className="text-6xl md:text-8xl font-black font-manrope tracking-tighter">
+                    <div className="flex flex-col items-center text-center mb-16 md:mb-20">
+                        <h1 className="text-5xl md:text-8xl font-black font-manrope tracking-tighter leading-none">
                             TOOLS & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">TECH</span>
                         </h1>
                         <p className="mt-6 text-gray-400 max-w-2xl text-lg relative">

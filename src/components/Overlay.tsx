@@ -51,10 +51,10 @@ export default function Overlay() {
                                 className="absolute inset-0 flex flex-col justify-end items-center pb-32 px-4 w-full max-w-[1920px] mx-auto z-10"
                             >
                                 <div className="text-center">
-                                    <h1 className="text-5xl md:text-7xl xl:text-8xl leading-none font-playfair font-black text-white tracking-tight mb-6 drop-shadow-2xl">
+                                    <h1 className="text-4xl md:text-7xl xl:text-8xl leading-none font-playfair font-black text-white tracking-tight mb-6 drop-shadow-2xl">
                                         AKILA UMAYANGA
                                     </h1>
-                                    <h2 className="text-xs md:text-xl text-neutral-300 font-manrope font-bold tracking-[0.2em] md:tracking-[0.4em] uppercase flex items-center justify-center gap-2 md:gap-4">
+                                    <h2 className="text-[10px] md:text-xl text-neutral-300 font-manrope font-bold tracking-[0.2em] md:tracking-[0.4em] uppercase flex items-center justify-center gap-2 md:gap-4">
                                         <motion.span initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-white/50 drop-shadow-md">SUPPORT</motion.span>
                                         <span className="text-neutral-600">|</span>
                                         <motion.span initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="text-white/50 drop-shadow-md">OPERATIONS</motion.span>
@@ -73,34 +73,34 @@ export default function Overlay() {
                                 className="absolute inset-0 flex items-center justify-between px-4 md:px-16 lg:px-24 w-full max-w-[1920px] mx-auto"
                             >
                                 {/* Left Column */}
-                                <div className="flex flex-col items-start justify-center h-full w-[40%] gap-12">
+                                <div className="flex flex-col items-start justify-center h-full w-[45%] md:w-[40%] gap-8 md:gap-12">
                                     <div className="space-y-2">
-                                        <h3 className="text-white font-manrope font-bold text-3xl">Build.</h3>
-                                        <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-xs">Designing resilient cloud infrastructure for high availability.</p>
+                                        <h3 className="text-white font-manrope font-bold text-xl md:text-3xl">Build.</h3>
+                                        <p className="text-neutral-400 text-[10px] md:text-base leading-relaxed max-w-xs uppercase tracking-tighter md:normal-case md:tracking-normal">Designing resilient cloud infrastructure.</p>
                                     </div>
-                                    <div className="space-y-2 pl-8 border-l border-neutral-700">
-                                        <h3 className="text-white font-manrope font-bold text-3xl">Monitor.</h3>
-                                        <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-xs">24/7 SIEM & SOC operations ensuring uptime.</p>
+                                    <div className="space-y-2 pl-4 md:pl-8 border-l border-neutral-700">
+                                        <h3 className="text-white font-manrope font-bold text-xl md:text-3xl">Monitor.</h3>
+                                        <p className="text-neutral-400 text-[10px] md:text-base leading-relaxed max-w-xs uppercase tracking-tighter md:normal-case md:tracking-normal">24/7 SIEM & SOC operations.</p>
                                     </div>
                                     <div className="space-y-2">
-                                        <h3 className="text-white font-manrope font-bold text-3xl">Defend.</h3>
-                                        <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-xs">Proactive threat hunting & incident response.</p>
+                                        <h3 className="text-white font-manrope font-bold text-xl md:text-3xl">Defend.</h3>
+                                        <p className="text-neutral-400 text-[10px] md:text-base leading-relaxed max-w-xs uppercase tracking-tighter md:normal-case md:tracking-normal">Proactive threat hunting.</p>
                                     </div>
                                 </div>
 
                                 {/* Right Column */}
-                                <div className="flex flex-col items-end justify-center h-full w-[40%] text-right gap-12">
+                                <div className="flex flex-col items-end justify-center h-full w-[45%] md:w-[40%] text-right gap-8 md:gap-12">
                                     <div className="space-y-2">
-                                        <h3 className="text-white font-manrope font-bold text-3xl">Scale.</h3>
-                                        <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-xs ml-auto">Optimizing performance for enterprise growth.</p>
+                                        <h3 className="text-white font-manrope font-bold text-xl md:text-3xl">Scale.</h3>
+                                        <p className="text-neutral-400 text-[10px] md:text-base leading-relaxed max-w-xs ml-auto uppercase tracking-tighter md:normal-case md:tracking-normal">Optimizing performance.</p>
                                     </div>
-                                    <div className="space-y-2 pr-8 border-r border-neutral-700">
-                                        <h3 className="text-white font-manrope font-bold text-3xl">Automate.</h3>
-                                        <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-xs ml-auto">Streamlining DevOps & CI/CD pipelines.</p>
+                                    <div className="space-y-2 pr-4 md:pr-8 border-r border-neutral-700">
+                                        <h3 className="text-white font-manrope font-bold text-xl md:text-3xl">Automate.</h3>
+                                        <p className="text-neutral-400 text-[10px] md:text-base leading-relaxed max-w-xs ml-auto uppercase tracking-tighter md:normal-case md:tracking-normal">Streamlining DevOps.</p>
                                     </div>
                                     <div className="space-y-2">
-                                        <h3 className="text-white font-manrope font-bold text-3xl text-blue-400">Experience.</h3>
-                                        <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-xs ml-auto">5+ years dedicated to enterprise IT & security engineering.</p>
+                                        <h3 className="text-white font-manrope font-bold text-xl md:text-3xl text-blue-400">Experience.</h3>
+                                        <p className="text-neutral-400 text-[10px] md:text-base leading-relaxed max-w-xs ml-auto uppercase tracking-tighter md:normal-case md:tracking-normal">5+ Years dedication.</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -114,14 +114,14 @@ export default function Overlay() {
                                 className="absolute inset-0 flex items-center justify-between px-8 md:px-20 w-full max-w-[1920px] mx-auto opacity-90"
                             >
                                 {/* Left Side Details */}
-                                <div className="flex flex-col gap-16 md:gap-24 top-1/2 -translate-y-1/2 relative mt-20">
-                                    <div className="space-y-4 border-l-2 border-emerald-500/50 pl-6 py-2">
-                                        <div className="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold font-manrope uppercase tracking-widest rounded-full mb-2">
+                                <div className="flex flex-col gap-12 md:gap-24 top-1/2 -translate-y-1/2 relative mt-4 md:mt-20">
+                                    <div className="space-y-3 md:space-y-4 border-l-2 border-emerald-500/50 pl-4 md:pl-6 py-2">
+                                        <div className="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold font-manrope uppercase tracking-widest rounded-full mb-1">
                                             Enterprise Ready
                                         </div>
-                                        <h3 className="text-white font-manrope font-bold text-2xl lg:text-3xl uppercase tracking-wider">Mission Critical</h3>
-                                        <p className="text-neutral-400 text-sm leading-relaxed font-manrope max-w-[280px]">
-                                            Architecting and securing zero-downtime environments for global scale operations.
+                                        <h3 className="text-white font-manrope font-bold text-xl md:text-3xl uppercase tracking-wider">Mission Critical</h3>
+                                        <p className="text-neutral-400 text-[10px] md:text-sm leading-relaxed font-manrope max-w-[180px] md:max-w-[280px]">
+                                            Securing zero-downtime environments for global scale.
                                         </p>
                                     </div>
 
@@ -129,25 +129,25 @@ export default function Overlay() {
                                     <motion.div
                                         animate={{ rotate: 360 }}
                                         transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
-                                        className="w-40 h-40 ml-4 flex items-center justify-center border border-white/5 rounded-full relative"
+                                        className="w-24 h-24 md:w-40 md:h-40 ml-4 flex items-center justify-center border border-white/5 rounded-full relative"
                                     >
                                         <div className="absolute inset-2 border border-dashed border-white/20 rounded-full" />
                                         <div className="absolute top-0 left-1/2 w-2 h-2 bg-emerald-400 rounded-full blur-[2px]" />
-                                        <span className="text-white/30 text-xs font-manrope uppercase tracking-[0.2em] text-center w-full">24/7<br />Uptime</span>
+                                        <span className="text-white/30 text-[8px] md:text-xs font-manrope uppercase tracking-[0.2em] text-center w-full">24/7<br />Uptime</span>
                                     </motion.div>
                                 </div>
 
                                 {/* Right Side Details */}
-                                <div className="flex flex-col items-end gap-16 md:gap-24 top-1/2 -translate-y-1/2 relative mt-20 text-right">
-                                    <div className="space-y-4 border-r-2 border-rose-500/50 pr-6 py-2">
+                                <div className="flex flex-col items-end gap-12 md:gap-24 top-1/2 -translate-y-1/2 relative mt-4 md:mt-20 text-right">
+                                    <div className="space-y-3 md:space-y-4 border-r-2 border-rose-500/50 pr-4 md:pr-6 py-2">
                                         <div className="inline-flex justify-end w-full">
-                                            <div className="px-3 py-1 bg-rose-500/10 text-rose-400 text-xs font-bold font-manrope uppercase tracking-widest rounded-full mb-2">
+                                            <div className="px-3 py-1 bg-rose-500/10 text-rose-400 text-[10px] font-bold font-manrope uppercase tracking-widest rounded-full mb-1">
                                                 Zero Trust
                                             </div>
                                         </div>
-                                        <h3 className="text-white font-manrope font-bold text-2xl lg:text-3xl uppercase tracking-wider">Secure Design</h3>
-                                        <p className="text-neutral-400 text-sm leading-relaxed font-manrope max-w-[280px] ml-auto">
-                                            Implementing advanced threat detection and preemptive security at every layer.
+                                        <h3 className="text-white font-manrope font-bold text-xl md:text-3xl uppercase tracking-wider">Secure Design</h3>
+                                        <p className="text-neutral-400 text-[10px] md:text-sm leading-relaxed font-manrope max-w-[180px] md:max-w-[280px] ml-auto">
+                                            Advanced threat detection and security at every layer.
                                         </p>
                                     </div>
 
@@ -155,11 +155,11 @@ export default function Overlay() {
                                     <motion.div
                                         animate={{ rotate: -360 }}
                                         transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
-                                        className="w-40 h-40 mr-4 flex items-center justify-center border border-white/5 rounded-full relative"
+                                        className="w-24 h-24 md:w-40 md:h-40 mr-4 flex items-center justify-center border border-white/5 rounded-full relative"
                                     >
                                         <div className="absolute inset-2 border border-dashed border-white/20 rounded-full" />
                                         <div className="absolute bottom-0 right-1/2 w-2 h-2 bg-rose-400 rounded-full blur-[2px]" />
-                                        <span className="text-white/30 text-xs font-manrope uppercase tracking-[0.2em] text-center w-full">Threat<br />Intel</span>
+                                        <span className="text-white/30 text-[8px] md:text-xs font-manrope uppercase tracking-[0.2em] text-center w-full">Threat<br />Intel</span>
                                     </motion.div>
                                 </div>
                             </motion.div>
